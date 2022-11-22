@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+/* no olvidar llamar en la api al controlador */
+use App\Http\Controllers\AutomovilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +15,5 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//esta es la direccion que yo abrire para poder llamar a la api
+Route::resource('automoviles', AutomovilController::class);
